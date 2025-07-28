@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SwiftX Courier</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="our-services.css"/>
+</head>
+<body>
+  <div id="loader" class="hidden">Loading...</div> 
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <h2>SwiftX</h2>
+      <ul id="sidebar-links"></ul>
+      <label class="theme-toggle">
+        <input type="checkbox" onchange="toggleTheme()" />
+        Dark Mode
+      </label>
+    </aside>
+
+    <main>
+      <!-- Home Page -->
+      <section id="home-page" class="page">
+        <h1>Welcome to SwiftX Courier</h1>
+        <p>Track parcels reliably and securely.</p>
+
+        <div class="tracking-box">
+          <input id="public-tracking-number" placeholder="Enter tracking number" />
+          <button onclick="trackPublicParcel()">Track Now</button>
+          <div class="public-tracking-result" id="public-tracking-result"></div>
+        </div>
+      </section>
+
+      <!-- Login -->
+      <section id="login-page" class="page hidden">
+        <h2>Login</h2>
+        <form id="login-form">
+          <input id="login-email" type="email" placeholder="Email" required />
+          <input id="login-password" type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <!-- Register -->
+      <section id="register-page" class="page hidden">
+        <h2>Create Account</h2>
+        <form id="register-form">
+          <input id="full-name" type="text" placeholder="Full Name" required />
+          <input id="register-email" type="email" placeholder="Email" required />
+          <input id="phone" type="tel" placeholder="Phone" required />
+          <input id="address" type="text" placeholder="Address" required />
+          <input id="register-password" type="password" placeholder="Password" required />
+          <button type="submit">Register</button>
+        </form>
+      </section>
+
+      <!-- Our service -->
+      <section id="service-page" class="page hidden">
+        <h2>Our services</h2>
+     <div class="slides-services">
+<div class="slide  active">
+    <img src="flight-transportation/john-mcarthur-X_MOr6oa4-k-unsplash.jpg" alt="">
+    <p>FLIGHT TRANSPORTATION</p>
+</div>
+<div class="slide ">
+    <img src="flight-transportation/kevin-bosc-KH4AkJIjpOE-unsplash.jpg" alt="">
+    <p>FLIGHT TRANSPORTATION</p>
+</div>
+<div class="slide  ">
+    <img src="flight-transportation/markus-winkler-V0WETbEXG5Y-unsplash.jpg" alt="">
+    <p>FLIGHT TRANSPORTATION</p>
+</div>
+
+
+
+<div class="slide">
+<img src="ship-transportation/bernd-dittrich-bCCs2Zha37M-unsplash.jpg" alt="">
+<p>SHIP TRANSPORTATION</p>
+</div>
+<div class="slide">
+<img src="ship-transportation/maksym-kaharlytskyi-kDVaFjoQf4M-unsplash.jpg" alt="">
+<p>SHIP TRANSPORTATION</p>
+</div>
+<div class="slide">
+<img src="ship-transportation/pexels-life-of-pix-21410.jpg" alt="">
+<p>SHIP TRANSPORTATION</p>
+</div>
+
+
+
+<div class="slide">
+<img src="train-transportation/pexels-dibert-2169286.jpg" alt="">
+<p>TRAIN TRANSPORTATION</p>
+</div>
+<div class="slide">
+<img src="train-transportation/pexels-pixabay-159148.jpg" alt="">
+<p>TRAIN TRANSPORTATION</p>
+</div>
+<div class="slide">
+<img src="train-transportation/pexels-pixabay-302428.jpg" alt="">
+<p>TRAIN TRANSPORTATION</p>
+</div>
+
+
+<div class="slide">
+<img src="underground-transportation/michi-h-1Hjc2NXvpzY-unsplash.jpg" alt="">
+<p>UNDERGROUND TRANSPORTATION</p>
+</div>
+<div class="slide">
+<img src="underground-transportation/tom-wheatley-Mpjgwan4PCM-unsplash.jpg" alt="">
+<p>UNDERGROUND TRANSPORTATION</p>
+</div>
+<div class="slide">
+<img src="underground-transportation/tom-wheatley-tnrXygjozMk-unsplash.jpg" alt="">
+<p>UNDERGROUND TRANSPORTATION</p>
+</div>
+   <!-- <button  class="prev"  onclick="prevSlide();">&#10094;</button>
+<button class="next" onclick="nextSlide();">&#10095;</button>
+ -->
+
+  </div> 
+
+
+      </section>
+
+      <!-- Dashboard -->
+      <section id="dashboard" class="page hidden">
+        <h2>Welcome, <span id="user-name"></span></h2>
+
+        <div id="account-details" class="section">
+          <h3>Your Account Info</h3>
+          <p><strong>Email:</strong> <span id="user-email"></span></p>
+          <p><strong>Phone:</strong> <span id="user-phone"></span></p>
+          <p><strong>Address:</strong> <span id="user-address"></span></p>
+        </div>
+
+        <div id="tracking" class="section">
+          <h3>Track a Parcel</h3>
+          <input id="tracking-number" placeholder="Tracking Number" />
+          <button onclick="trackParcel()">Track</button>
+          <div id="tracking-result"></div>
+        </div>
+
+        <div id="admin-panel" class="section hidden">
+          <h3>Admin Dashboard</h3>
+          <select id="admin-tracking-select"></select>
+          <button onclick="adminIncreaseProgress()">Increase Progress</button>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section id="faqs" class="page hidden section">
+        <h2>FAQs</h2>
+        <p><strong>Q:</strong> How do I track my parcel?<br /><strong>A:</strong> Use your tracking number on the homepage or dashboard.</p>
+        <p><strong>Q:</strong> Can I change my delivery address?<br /><strong>A:</strong> Contact support immediately to update your info.</p>
+      </section>
+
+      <!-- Delivery Policies -->
+      <section id="delivery-policies" class="page hidden section">
+        <h2>Delivery Policies</h2>
+        <p>We aim to deliver all parcels within 2-4 business days. Delays may occur due to weather or traffic.</p>
+      </section>
+
+      <!-- Contact Support -->
+      <section id="contact-support" class="page hidden section">
+        <h2>Contact Support</h2>
+        <p>Email: support@swiftx.com</p>
+        <p>Phone: +27 68-222-7162</p>
+      </section>
+    </main>
+  </div>
+   <script src="script.js"></script>
+<script src="our-services.js"></script>
+
+ 
+</body>
+</html>
