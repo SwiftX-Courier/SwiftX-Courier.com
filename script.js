@@ -133,16 +133,16 @@ function loadDashboard() {
 // Tracking DB
 let trackingDB = JSON.parse(localStorage.getItem('trackingDB')) || {
   'SWF123456789': [
-    { time: '2024-07-01 08:00', msg: '📦 Package accepted in USA.' },
-    { time: '2024-07-02 10:30', msg: '🚛 Departed USA Hub (A Compulsory Payment of R1000 will be cleared by you on arrival of the parcel in your country)' }
+    { time: '2024-07-01 08:00', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
+    { time: '2024-07-02 10:30', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
   ],
   'SWF987654321': [
-    { time: '2024-07-05 09:15', msg: '📦 Parcel accepted in USA.' },
-    { time: '2024-07-06 14:00', msg: '🚛 Departed USA Hub (A Compulsory Payment of R1000 will be cleared by you on arrival of the parcel in your country)' }
+    { time: '2024-07-05 09:15', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
+    { time: '2024-07-06 14:00', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
   ],
    'SWF987654324': [
-    { time: '2024-07-05 09:15', msg: '📦 Parcel accepted in USA.' },
-    { time: '2024-07-06 14:00', msg: '🚛 Departed USA Hub (A Compulsory Payment of R1000 will be cleared by you on arrival of the parcel in your country)' }
+    { time: '2024-07-05 09:15', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
+    { time: '2024-07-06 14:00', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
   ]
 };
 
@@ -183,8 +183,8 @@ function showTrackingInfo(number, resultId) {
 function adminIncreaseProgress() {
   const selected = document.getElementById('admin-tracking-select').value;
   const updates = [
-     'IN Transit 🚀',
-    'Arrived at International Cape Town Airport🏬',
+     'IN Transit 🚀  (A Compulsory Payment of R1000 will be cleared by you on arrival of the parcel in your country)',
+    'Arrived at International Cape Town Airport🏬 (Pending Clearance)',
     'In transit to final destination 🚚',
     'Delivered and signed by: Swiftx courier service ✍️'
   ];
