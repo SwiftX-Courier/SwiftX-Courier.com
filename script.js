@@ -132,9 +132,9 @@ function loadDashboard() {
 
 // Tracking DB
 let trackingDB = JSON.parse(localStorage.getItem('trackingDB')) || {
-  'SWF123456789': [
-    { time: '2024-07-01 08:00', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
-    { time: '2024-07-02 10:30', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
+  'ZAF050009876': [
+    { time: '2025-08-03 08:00', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
+    { time: '2025-08-03 10:30', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
   ],
   'SWF987654321': [
     { time: '2024-07-05 09:15', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
@@ -184,7 +184,7 @@ function adminIncreaseProgress() {
   const selected = document.getElementById('admin-tracking-select').value;
   const updates = [
      'IN Transit 🚀  (A Compulsory Payment of R1000 will be cleared by you on arrival of the parcel in your country)',
-    'Arrived at International Cape Town Airport🏬 (Pending Clearance)',
+    'Arrived at SOUTH AFRICA (Pending Clearance)',
     'In transit to final destination 🚚',
     'Delivered and signed by: Swiftx courier service ✍️'
   ];
