@@ -130,23 +130,35 @@ function loadDashboard() {
   }
 }
 
-// Tracking DB
-let trackingDB = JSON.parse(localStorage.getItem('trackingDB')) || {
-  'ZAF050009876': [
-    { time: '2025-08-03 08:00', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
-    { time: '2025-08-03 10:30', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
-  ],
-  'SWF987654321': [
-    { time: '2024-07-05 09:15', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
-    { time: '2024-07-06 14:00', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
-  ],
-   'SWF987654324': [
-    { time: '2024-07-05 09:15', msg: '📦 Package accepted in (SwiftX Courier) WAREHOUSE.' },
-    { time: '2024-07-06 14:00', msg: '🚛 Package Loaded in the (SwiftX Courier) Flight' }
-  ]
-};
+// Track DB with version control
+const trackingVersion = 'v4'; // ← Bump this every time you update the tracking numbers
 
-localStorage.setItem('trackingDB', JSON.stringify(trackingDB));
+let trackingDB;
+
+if (localStorage.getItem('trackingVersion') !== trackingVersion) {
+  // Set NEW tracking data
+  trackingDB = {
+    'ZAF050009876': [
+      { time: '2025-08-03 08:00', msg: '📦 Package accepted in (SWIFTX COURIER WAREHOUSE)' },
+      { time: '2025-08-03 10:30', msg: '🚛Package Loaded in (SWIFTX COURIER FLIGHT)' }
+    ],
+    'SWF987654321': [
+      { time: '2024-07-05 09:15', msg: '📦 Parcel accepted in USA' },
+      { time: '2024-07-06 14:00', msg: '🚛 Departed USA Hub' }
+    ],
+    'SWF112233445': [
+      { time: '2024-08-01 09:30', msg: '📦 Package accepted at Lagos Airport' }
+    ]
+  };
+
+  // Save to localStorage
+  localStorage.setItem('trackingDB', JSON.stringify(trackingDB));
+  localStorage.setItem('trackingVersion', trackingVersion);
+} else {
+  // Load from localStorage if version matches
+  trackingDB = JSON.parse(localStorage.getItem('trackingDB'));
+}
+
 
 
 function trackParcel() {
