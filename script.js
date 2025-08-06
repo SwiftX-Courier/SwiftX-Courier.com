@@ -197,8 +197,8 @@ function showTrackingInfo(number, resultId) {
 function adminIncreaseProgress() {
   const selected = document.getElementById('admin-tracking-select').value;
   const updates = [
-    
-  
+    'FVFYUKFYIFYIF6UYYU6FY6U'
+  'GHCGCKGCYVYFUFYUFYFKY,UI',
     'In transit to final destination 🚚',
     'Delivered and signed by: Swiftx courier service ✍️'
   ];
