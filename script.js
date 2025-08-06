@@ -184,7 +184,7 @@ function showTrackingInfo(number, resultId) {
       ul.appendChild(li);
     });
     container.appendChild(ul);
-    const progress = Math.round((steps.length / 3) * 100);
+    const progress = Math.round((steps.length / 6) * 100);
     container.innerHTML += `<div style="margin-top:10px;">Progress: ${progress}%</div>`;
   } else {
     container.textContent = "Tracking number not found.";
