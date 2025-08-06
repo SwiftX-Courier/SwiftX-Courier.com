@@ -131,7 +131,7 @@ function loadDashboard() {
 }
 
 // Track DB with version control
-const trackingVersion = 'v4'; // ← Bump this every time you update the tracking numbers
+const trackingVersion = 'v5'; // ← Bump this every time you update the tracking numbers
 
 let trackingDB;
 
