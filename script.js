@@ -171,47 +171,24 @@ function trackPublicParcel() {
   showTrackingInfo(number, 'public-tracking-result');
 }
 
+
 function showTrackingInfo(number, resultId) {
   const container = document.getElementById(resultId);
   container.innerHTML = '';
-
   if (trackingDB[number]) {
     const steps = trackingDB[number];
     const ul = document.createElement('ul');
-
     steps.forEach(s => {
       const li = document.createElement('li');
       li.innerHTML = `<strong>${s.time}</strong>: ${s.msg}`;
       ul.appendChild(li);
     });
-
     container.appendChild(ul);
-
-    // 📊 Manual progress mapping
-    let progress = 0;
-    switch (steps.length) {
-      case 1:
-        progress = 30;
-        break;
-      case 2:
-        progress = 60;
-        break;
-      case 3:
-        progress = 80;
-        break;
-      case 4:
-        progress = 90;
-        break;
-      case 5:
-      case 6:
-      default:
-        progress = 100;
-        break;
-    }
-
+    const progress = Math.round((steps.length / 3) * 100);
     container.innerHTML += `<div style="margin-top:10px;">Progress: ${progress}%</div>`;
   } else {
     container.textContent = "Tracking number not found.";
+    container.style.color = 'red'
   }
 }
 
