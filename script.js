@@ -131,7 +131,7 @@ function loadDashboard() {
 }
 
 // Track DB with version control
-const trackingVersion = 'v6'; // ← Bump this every time you update the tracking numbers
+const trackingVersion = 'v7'; // ← Bump this every time you update the tracking numbers
 
 let trackingDB;
 
@@ -140,8 +140,7 @@ if (localStorage.getItem('trackingVersion') !== trackingVersion) {
   trackingDB = {
     'ZAF050009876': [
       { time: '2025-08-03 08:00', msg: '📦 Package accepted in (SWIFTX COURIER WAREHOUSE)' },
-      { time: '2025-08-03 10:30', msg: '🚛Package Loaded in (SWIFTX COURIER FLIGHT)' },
-      { time:  '2025-08-03 10:30', msg: 'Arrived at SOUTH AFRICA(PENDING CLEARANCE)'}
+       { time:  '2025-08-06 08:30', msg: 'Arrived at SOUTH AFRICA(PENDING CLEARANCE)'}
     ],
     'SWF987654321': [
       { time: '2024-07-05 09:15', msg: '📦 Parcel accepted in USA' },
@@ -206,7 +205,7 @@ function adminIncreaseProgress() {
   const data = trackingDB[selected];
   if (data.length < 6) {
     const now = new Date().toISOString().slice(0, 16).replace('T', ' ');
-    const nextStep = updates[data.length - 2] || 'Delivered ✅';
+    const nextStep = updates[data.length - 4] || 'Delivered ✅';
     data.push({ time: now, msg: nextStep });
 
     // ✅ Save update to localStorage
