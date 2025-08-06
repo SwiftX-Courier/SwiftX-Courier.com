@@ -183,7 +183,7 @@ function showTrackingInfo(number, resultId) {
       ul.appendChild(li);
     });
     container.appendChild(ul);
-    const progress = Math.round((steps.length / 6) * 100);
+    const progress = Math.round((steps.length / 3) * 100);
     container.innerHTML += `<div style="margin-top:10px;">Progress: ${progress}%</div>`;
   } else {
     container.textContent = "Tracking number not found.";
@@ -205,7 +205,7 @@ function adminIncreaseProgress() {
   const data = trackingDB[selected];
   if (data.length < 6) {
     const now = new Date().toISOString().slice(0, 16).replace('T', ' ');
-    const nextStep = updates[data.length - 4] || 'Delivered ✅';
+    const nextStep = updates[data.length - 2] || 'Delivered ✅';
     data.push({ time: now, msg: nextStep });
 
     // ✅ Save update to localStorage
