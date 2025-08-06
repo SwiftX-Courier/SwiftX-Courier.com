@@ -140,7 +140,8 @@ if (localStorage.getItem('trackingVersion') !== trackingVersion) {
   trackingDB = {
     'ZAF050009876': [
       { time: '2025-08-03 08:00', msg: '📦 Package accepted in (SWIFTX COURIER WAREHOUSE)' },
-      { time: '2025-08-03 10:30', msg: '🚛Package Loaded in (SWIFTX COURIER FLIGHT)' }
+      { time: '2025-08-03 10:30', msg: '🚛Package Loaded in (SWIFTX COURIER FLIGHT)' },
+      { time:  '2025-08-03 10:30', msg: 'Arrived at SOUTH AFRICA(PENDING CLEARANCE)'}
     ],
     'SWF987654321': [
       { time: '2024-07-05 09:15', msg: '📦 Parcel accepted in USA' },
