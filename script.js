@@ -140,9 +140,7 @@ if (localStorage.getItem('trackingVersion') !== trackingVersion) {
   trackingDB = {
     'ZAF050009876': [
       { time: '2025-08-03 08:00', msg: '📦 Package accepted in (SWIFTX COURIER WAREHOUSE)' },
-      { time: '2025-08-03 10:30', msg: '🚛Package Loaded in (SWIFTX COURIER FLIGHT)' },
-      { time: '2025-08-04-12:30', msg:  'IN Transit 🚀  (A Compulsory Payment of R1000 will be cleared by you on arrival of the parcel in your country)'},
-      { time: '2025-08-06-8:30',  msg:  'Arrived at SOUTH AFRICA (Pending Clearance)'}
+      { time: '2025-08-03 10:30', msg: '🚛Package Loaded in (SWIFTX COURIER FLIGHT)' }
     ],
     'SWF987654321': [
       { time: '2024-07-05 09:15', msg: '📦 Parcel accepted in USA' },
@@ -197,8 +195,8 @@ function showTrackingInfo(number, resultId) {
 function adminIncreaseProgress() {
   const selected = document.getElementById('admin-tracking-select').value;
   const updates = [
-    'FVFYUKFYIFYIF6UYYU6FY6U'
-  'GHCGCKGCYVYFUFYUFYFKY,UI',
+      'IN Transit 🚀  (A Compulsory Payment of R1000 will be cleared by you on arrival of the parcel in your country)',
+        'Arrived at SOUTH AFRICA (Pending Clearance)',
     'In transit to final destination 🚚',
     'Delivered and signed by: Swiftx courier service ✍️'
   ];
